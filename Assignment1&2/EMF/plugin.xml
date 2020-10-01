@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated eMF -->
+      <package
+            uri="http://www.example.org/eMF"
+            class="eMF.EMFPackage"
+            genModel="model/eMF.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated eMF -->
+      <parser
+            type="emf"
+            class="eMF.util.EMFResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

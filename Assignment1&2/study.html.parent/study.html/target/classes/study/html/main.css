@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    padding: 10px 8vw;
+    flex-direction: column;
+    width: 45vw;
+    min-width: fit-content;
+    background-color: #eee;
+    border-radius: 10px;
+    
+}
+
+.institute {
+    display: flex;
+    font-family: serif;
+    font-size: 2.5em;
+    align-self: center;
+    color: rgb(0,80,158);
+}
+
+.programme {
+    display: flex;
+    font-size: 1.5em;
+}
+
+.specialization {
+    margin: 10px 0px 0px;
+    display: flex;
+    font-size: 1.2em;
+}
+
+.year {
+    margin: 10px 0px 0px;
+    display: flex;
+    font-size: 1.5em;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.semester {
+    margin: 5px 0px 0px;
+    display: flex;
+    font-size: 1.2em;
+    width: 100%;
+}
+
+.course, .header {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0px 0px;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.code {
+    width: 20%;
+}
+
+.name {
+    width: 60%;
+}
+
+.credits {
+    width: 8%;
+}
+
+.status {
+    width: 10%;
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/EMF/src-gen" creationIcons="false" editDirectory="/EMF.edit/src-gen"
+    editorDirectory="/EMF.editor/src-gen" modelPluginID="EMF" modelName="EMF" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>eMF.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="EMF" resource="XMI" disposableProviderFactory="true" ecorePackage="eMF.ecore#/">
+    <genDataTypes ecoreDataType="eMF.ecore#//Credits"/>
+    <genClasses ecoreClass="eMF.ecore#//Programme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF.ecore#//Programme/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF.ecore#//Programme/years"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF.ecore#//Programme/numberOfYears"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF.ecore#//Programme/specializations"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF.ecore#//Semester">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF.ecore#//Semester/semesterNumber"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF.ecore#//Semester/courses"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference eMF.ecore#//Semester/semesterInYear"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF.ecore#//Year">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF.ecore#//Year/yearNumber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF.ecore#//Year/semesters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF.ecore#//Year/numberOfSemesters"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference eMF.ecore#//Year/yearInProgramme"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF.ecore#//Course">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF.ecore#//Course/courseName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF.ecore#//Course/courseCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF.ecore#//Course/credits"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF.ecore#//Course/course"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF.ecore#//Specialization">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF.ecore#//Specialization/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF.ecore#//Specialization/requiredSpecialization"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF.ecore#//Specialization/specializationInProgramme"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF.ecore#//Specialization/year"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF.ecore#//courseInSemester">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute eMF.ecore#//courseInSemester/mandatory"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF.ecore#//courseInSemester/courseIn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF.ecore#//courseInSemester/level"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMF.ecore#//courseInSemester/course"/>
+    </genClasses>
+    <genClasses ecoreClass="eMF.ecore#//Institute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMF.ecore#//Institute/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF.ecore#//Institute/programme"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eMF.ecore#//Institute/course"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

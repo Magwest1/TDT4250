@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eMF:Institute
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:eMF="http://www.example.org/eMF"
+    xsi:schemaLocation="http://www.example.org/eMF ../../../../EMF/model/eMF.ecore"
+    Name="NTNU">
+  <programme
+      name="Ingeniørvitenskap og IKT"
+      numberOfYears="5">
+    <years yearNumber="1">
+      <semesters
+          semesterNumber="1">
+        <courses
+            mandatory="true"
+            course="TMA4100"/>
+        <courses
+            mandatory="true"
+            course="TDT4105"/>
+        <courses
+            mandatory="true"
+            course="TMA4140"/>
+        <courses
+            mandatory="true"
+            course="TMR4325"/>
+      </semesters>
+      <semesters
+          semesterNumber="2">
+        <courses
+            mandatory="true"
+            course="EXPH0004"/>
+        <courses
+            mandatory="true"
+            course="TDT4100"/>
+        <courses
+            mandatory="true"
+            course="TKT4116"/>
+        <courses
+            mandatory="true"
+            course="TMA4105"/>
+      </semesters>
+    </years>
+    <specializations
+        name="Maskinteknikk">
+      <year
+          yearNumber="3">
+        <semesters
+            semesterNumber="5">
+          <courses
+              course="TMA4100"/>
+        </semesters>
+      </year>
+    </specializations>
+  </programme>
+  <course courseName="Matematikk 1"
+      courseCode="TMA4100"
+      credits="7.5"
+      course="//@programme.0/@years.0/@semesters.0/@courses.0 //@programme.0/@specializations.0/@year.0/@semesters.0/@courses.0"/>
+  <course courseName="Informasjonsteknologi"
+      courseCode="TDT4105"
+      credits="7.5"
+      course="//@programme.0/@years.0/@semesters.0/@courses.1"/>
+  <course courseName="Diskret matematikk"
+      courseCode="TMA4140"
+      credits="7.5"
+      course="//@programme.0/@years.0/@semesters.0/@courses.2"/>
+  <course courseName="I&amp;IKT intro"
+      courseCode="TMR4325"
+      credits="7.5"
+      course="//@programme.0/@years.0/@semesters.0/@courses.3"/>
+  <course courseName="Exphil"
+      courseCode="EXPH0004"
+      credits="7.5"
+      course="//@programme.0/@years.0/@semesters.1/@courses.0"/>
+  <course courseName="Objektorientert programmering"
+      courseCode="TDT4100"
+      credits="7.5"
+      course="//@programme.0/@years.0/@semesters.1/@courses.1"/>
+  <course courseName="Mekanikk 1"
+      courseCode="TKT4116"
+      credits="7.5"
+      course="//@programme.0/@years.0/@semesters.1/@courses.2"/>
+  <course courseName="Matematikk 2"
+      courseCode="TMA4105"
+      credits="7.5"
+      course="//@programme.0/@years.0/@semesters.1/@courses.3"/>
+</eMF:Institute>
