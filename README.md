@@ -15,9 +15,21 @@ A constraint written in **EMFValidator.java** ensures that mandatory courses in 
 ### Changes
 01.10.20. After working with assignment 2 following changes to the model from assignment 1 was made:
 - Made a new super class named Institute
-- Added manual written code to calculate *NumberOfSemesters* as described above
-- Renamed some of the references
+- Added manual written code to calculate *NumberOfSemesters* as described above. This replaces code in a removed file.
+- Renamed some references
 - Removed some unnecessary references
+- Made som references containment
 
 ## Assignment 2
-For assignment 2 I created a seperate Xtext Project named **study.html**. The model from assignment 1 is transformed to text in **GeneratorMain.java** which is located in study.html/src-gen/study/html. The model is initialized with **Institute.xmi** as sample data and returned as an EObject. The **Generateor.xtend** gets the EObject as input and returns a string with the html code. **GeneratorMain.java** prints the string and saves it as **index.html** in the same folder. **index.html** together with **main.css** makes up the webpage.
+### Files and code
+For assignment 2 I have created a seperate Xtext Project named *study.html*. The model from assignment 1 is transformed to text in **GeneratorMain.java** which is located in *study.html/src-gen/study/html*. The model is initialized with **Institute.xmi** as sample data and returned as an EObject. The **Generateor.xtend** gets the EObject as input and returns a string with the html code. **GeneratorMain.java** prints the string and saves it as **index.html** in the same folder. **index.html** together with **main.css** makes up the webpage.
+
+### How to download and use the project
+1. Open terminal/CMD and navigate to an empty folder. Run *git clone https://github.com/Magwest1/TDT4250.git*.
+2. Open eclipse and choose *Open Projects from File System...* and navigate to TDT4250. Choose *TDT4250/Assignment1&2/EMF* and *TDT4250/Assignment1&2/study.html.parent/study.html*
+3. Navigate to *study.html/META-INF/MANIFEST.MF*. Select the tab *Dependencies* and make sure *EMF(0.1.0)*, *org.eclipse.xtext*, *org.eclipse.xtext.xbase*, *org.eclipse.equinox.common;bundle-version="3.5.0"*, *org.eclipse.xtend.lib.source;bundle-version="2.23.0"* are selected as *Required Plug-ins*. 
+4. Navigate to *study.html/src-gen/study/html/Institute.xmi* and make desired changes to the sample data.
+5. Run *study.html/src-gen/study/html/GeneratorMain.java*.
+6. A generated html file will be saved to *study.html/src-gen/study/html/index.html*. Make sure *main.css* is accessible
+
+### How to install Xtend
