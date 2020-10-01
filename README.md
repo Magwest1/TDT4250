@@ -2,11 +2,11 @@
 EMF is a Study plan made with Ecore modeling framework. It is part of a project during autumn 2020 in the course *TDT4250 Advanced Software Design*.
 
 ## Content
-The main folder **Assignment1&2** contains the folders **EMF** and **study.html.parent**. The **EMF** folder was created for assignment 1 and is a part of assigment 2. It contains the java model. The **study.html.parent** folder was created for assignment 2. It contains generation files to make a HTML page. 
+The main folder *Assignment1&2* contains the folders *EMF* and *study.html.parent*. The *EMF* folder was created for assignment 1 and is a part of assigment 2. It contains the java model. The *study.html.parent* folder was created for assignment 2. It contains generation files to make a HTML page. 
 
 ## Assignment 1
 ### The model
-The **EMF** folder contains a model folder with an ecore and genmodel file. They are used to model the software and generate corresponding java code.
+The *EMF* folder contains a model folder with an ecore and genmodel file. They are used to model the software and generate corresponding java code.
 The src-gen folder contains the generated java files, including implementation and util files.
 
 For assignment 1 I have modeled the software in the **eMF.ecore** file. It consists of a Programme root class. It has a opposite association and is containment for the Year class. The same relation goes for the Year and Semester class. A Semester can have several Courses through the courseInSemester relationship class. A Specialization can have a relation to a Programme and Semester, and also to another Specialization it may be a part of. The model has a DataType class which enumerates legal credit values. A constraint written in OCL checks that a Programme has at least one year.
@@ -27,7 +27,13 @@ For assignment 2 I have created a seperate Xtext Project named *study.html*. The
 ### How to download and use the project
 1. Open terminal/CMD and navigate to an empty folder. Run *git clone https://github.com/Magwest1/TDT4250.git*.
 2. Open eclipse and choose *Open Projects from File System...* and navigate to TDT4250. Choose *TDT4250/Assignment1&2/EMF* and *TDT4250/Assignment1&2/study.html.parent/study.html*
-3. Navigate to *study.html/META-INF/MANIFEST.MF*. Select the tab *Dependencies* and make sure *EMF(0.1.0)*, *org.eclipse.xtext*, *org.eclipse.xtext.xbase*, *org.eclipse.equinox.common;bundle-version="3.5.0"*, *org.eclipse.xtend.lib.source;bundle-version="2.23.0"* are selected as *Required Plug-ins*. 
+3. Navigate to *study.html/META-INF/MANIFEST.MF*. Select the tab *Dependencies* and make sure 
+    - *EMF(0.1.0)*
+    - *org.eclipse.xtext*
+    - *org.eclipse.xtext.xbase*
+    - *org.eclipse.equinox.common;bundle-version="3.5.0"*
+    - *org.eclipse.xtend.lib.source;bundle-version="2.23.0"* 
+are selected as *Required Plug-ins*. 
 4. Navigate to *study.html/src-gen/study/html/Institute.xmi* and make desired changes to the sample data.
 5. Run *study.html/src-gen/study/html/GeneratorMain.java*.
 6. A generated html file will be saved to *study.html/src-gen/study/html/index.html*. Make sure *main.css* is accessible
