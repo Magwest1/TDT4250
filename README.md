@@ -27,13 +27,12 @@ For assignment 2 I have created a seperate Xtext Project named *study.html*. The
 ### How to download and use the project
 1. Open terminal/CMD and navigate to an empty folder. Run *git clone https://github.com/Magwest1/TDT4250.git*.
 2. Open eclipse and choose *Open Projects from File System...* and navigate to TDT4250. Choose *TDT4250/Assignment1&2/EMF* and *TDT4250/Assignment1&2/study.html.parent/study.html*
-3. Navigate to *study.html/META-INF/MANIFEST.MF*. Select the tab *Dependencies* and make sure 
+3. Navigate to *study.html/META-INF/MANIFEST.MF*. Select the tab *Dependencies* and make sure the following are selected as *Required Plug-ins*:
     - *EMF(0.1.0)*
     - *org.eclipse.xtext*
     - *org.eclipse.xtext.xbase*
     - *org.eclipse.equinox.common;bundle-version="3.5.0"*
     - *org.eclipse.xtend.lib.source;bundle-version="2.23.0"* 
-are selected as *Required Plug-ins*. 
 4. Navigate to *study.html/src-gen/study/html/Institute.xmi* and make desired changes to the sample data.
 5. Run *study.html/src-gen/study/html/GeneratorMain.java*.
 6. A generated html file will be saved to *study.html/src-gen/study/html/index.html*. Make sure *main.css* is accessible
