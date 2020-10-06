@@ -24,9 +24,11 @@ A constraint written in **EMFValidator.java** ensures that mandatory courses in 
 ### Files and code
 For assignment 2 I have created a seperate Xtext Project named *study.html*. The model from assignment 1 is transformed to text in **GeneratorMain.java** which is located in *study.html/src-gen/study/html*. The model is initialized with **Institute.xmi** as sample data and returned as an EObject. The **Generateor.xtend** gets the EObject as input and returns a string with the html code. **GeneratorMain.java** prints the string and saves it as **index.html** in the same folder. **index.html** together with **main.css** makes up the webpage.
 
+I have also generated tests which are located in the *EMF.tests* folder. A test is written in **YearTest.java** testing the getNumberOfSemesters function I created in assignment 1
+
 ### How to download and use the project
 1. Open terminal/CMD and navigate to an empty folder. Run *git clone https://github.com/Magwest1/TDT4250.git*.
-2. Open eclipse and choose *Open Projects from File System...* and navigate to TDT4250. Choose *TDT4250/Assignment1&2/EMF* and *TDT4250/Assignment1&2/study.html.parent/study.html*
+2. Open eclipse and choose *Open Projects from File System...* and navigate to TDT4250. Choose *TDT4250/Assignment1&2/EMF*, *TDT4250/Assignment1&2/study.html.parent/study.html* and *TDT4250/Assignment1&2/EMF.tests*
 3. Navigate to *study.html/META-INF/MANIFEST.MF*. Select the tab *Dependencies* and make sure the following are selected as *Required Plug-ins*:
     - *EMF(0.1.0)*
     - *org.eclipse.xtext*
