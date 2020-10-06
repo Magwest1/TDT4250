@@ -24,14 +24,14 @@ class Generator {
 	    <title>Studyplan</title>
 </head>
 <body>
-'''
-		generateOutput(ins, stringbuilder) 
+'''	
+		generateOutput(ins, stringbuilder) // Start generating content based on the Institute EObject
 		stringbuilder << '''
 </body>
 </html>'''
 	}
 	
-	def dispatch void generateOutput(Institute ins, StringBuilder stringbuilder) {
+	def dispatch void generateOutput(Institute ins, StringBuilder stringbuilder) { // Generate html from data in Institute 
 		stringbuilder << "<div class='content'>\n"
     	stringbuilder << "<div class='institute'>" << ins.name << "</div>\n"
     	stringbuilder << "<h1>Study plan</h1>\n"
@@ -40,26 +40,28 @@ class Generator {
 
 	}
 	
-	def dispatch void generateOutput(Programme pro, StringBuilder stringbuilder) {
+	def dispatch void generateOutput(Programme pro, StringBuilder stringbuilder) { // Generate html from data in Programme
 		stringbuilder << "<div class='programme'>Programme: " << pro.name << "</div>\n"
 		pro.years.forEach[generateOutput(it, stringbuilder)]
 		pro.specializations.forEach[generateOutput(it, false, stringbuilder)]
 		stringbuilder << "<div class='border'></div>\n<br>\n<br>\n"
 	}
 	
-	def void generateOutput(Specialization spec, Boolean secondary, StringBuilder stringbuilder) {
+	def void generateOutput(Specialization spec, Boolean secondary, StringBuilder stringbuilder) { // Generate html from data in Specialization
+		//If the boolean is true we have a higher level specialization and want to use a differen header
 		stringbuilder << "<div class='specialization" << (secondary ? "-secondary'" : "'") << ">Specialization: " << spec.name << "</div>\n"
 		spec.year.forEach[generateOutput(it, stringbuilder)]
 		spec.requiredSpecialization.forEach[generateOutput(it, true, stringbuilder)]
 	}
 	
-	def dispatch void generateOutput(Year yr, StringBuilder stringbuilder) {
+	def dispatch void generateOutput(Year yr, StringBuilder stringbuilder) { // Generate html from data in Year
 		stringbuilder << "<div class='year'>" << yr.yearNumber << ". Year. Showing "
+		// Check number of semesters with function made in assignment 1 and print the text accordingly
 		stringbuilder << yr.getNumberOfSemesters() << " semester"<< (yr.getNumberOfSemesters() > 1 ? "s:" : ":") << "</div>\n"
 		yr.semesters.forEach[generateOutput(it, stringbuilder)]
 	}
 	
-	def dispatch void generateOutput(Semester sm, StringBuilder stringbuilder) {
+	def dispatch void generateOutput(Semester sm, StringBuilder stringbuilder) { // Generate html from data in Semester
 		stringbuilder << "<div class='table'>\n"
 		stringbuilder << "<div class='semester'>" << sm.semesterNumber << ". Semester</div>\n"
 		stringbuilder << "<div class='header'>\n"
@@ -72,12 +74,12 @@ class Generator {
 		stringbuilder << "</div>\n"
 	}
 	
-	def void generateOutput(Course crs, Boolean mandatory, StringBuilder stringbuilder) {
+	def void generateOutput(Course crs, Boolean mandatory, StringBuilder stringbuilder) { // Generate html from data in Course
 		stringbuilder << "<div class='course'>\n"
 		stringbuilder << "<div class='code'>" << crs.courseCode << "</div>\n"
 		stringbuilder << "<div class='name'>" << crs.courseName << "</div>\n"
 		stringbuilder << "<div class='credits'>" << crs.credits << "</div>\n"
-		stringbuilder << "<div class='status'>" << (mandatory ? "O" : "VA") << "</div>\n"
+		stringbuilder << "<div class='status'>" << (mandatory ? "O" : "VA") << "</div>\n" // Check if course is mandatory
 		stringbuilder << "</div>\n"
 	}
 	
