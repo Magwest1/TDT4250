@@ -116,6 +116,8 @@
               course="TMM4270"/>
           <courses
               course="TMM4150"/>
+          <courses
+              course="TDT4250"/>
         </semesters>
         <semesters
             semesterNumber="8">
@@ -150,6 +152,78 @@
               course="TMM4935"/>
           <courses
               course="TMM4960"/>
+        </semesters>
+      </year>
+    </specializations>
+    <specializations
+        name="Produksjonsledelse">
+      <year
+          yearNumber="3">
+        <semesters
+            semesterNumber="5">
+          <courses
+              mandatory="true"
+              course="TMA4130"/>
+          <courses
+              course="TDT4165"/>
+          <courses
+              course="TDT4195"/>
+          <courses
+              mandatory="true"
+              course="TPK4165"/>
+        </semesters>
+        <semesters
+            semesterNumber="6">
+          <courses
+              mandatory="true"
+              course="TIØ4258"/>
+          <courses
+              mandatory="true"
+              course="TPK4135"/>
+          <courses
+              course="TDT4240"/>
+          <courses
+              course="TDT4305"/>
+        </semesters>
+      </year>
+      <year
+          yearNumber="4">
+        <semesters
+            semesterNumber="7">
+          <courses
+              mandatory="true"
+              course="TPK4160"/>
+          <courses
+              course="TDT4250"/>
+        </semesters>
+        <semesters
+            semesterNumber="8">
+          <courses
+              course="TDT4305"/>
+          <courses
+              course="TMR4345"/>
+          <courses
+              course="TMM4155"/>
+          <courses
+              course="TDT4265"/>
+        </semesters>
+      </year>
+      <year
+          yearNumber="5">
+        <semesters
+            semesterNumber="9">
+          <courses
+              mandatory="true"
+              course="TPK4430"/>
+          <courses
+              mandatory="true"
+              course="TPK4530"/>
+        </semesters>
+        <semesters
+            semesterNumber="10">
+          <courses
+              mandatory="true"
+              course="TPK4930"/>
         </semesters>
       </year>
     </specializations>
@@ -233,15 +307,15 @@
   <course courseName="Matematikk 4N"
       courseCode="TMA4130"
       credits="7.5"
-      course="//@programme.0/@specializations.0/@year.0/@semesters.0/@courses.0"/>
+      course="//@programme.0/@specializations.0/@year.0/@semesters.0/@courses.0 //@programme.0/@specializations.1/@year.0/@semesters.0/@courses.0"/>
   <course courseName="Programmeringsspråk"
       courseCode="TDT4165"
       credits="7.5"
-      course="//@programme.0/@specializations.0/@year.0/@semesters.0/@courses.1 //@programme.0/@specializations.0/@year.1/@semesters.0/@courses.0"/>
+      course="//@programme.0/@specializations.0/@year.0/@semesters.0/@courses.1 //@programme.0/@specializations.0/@year.1/@semesters.0/@courses.0 //@programme.0/@specializations.1/@year.0/@semesters.0/@courses.1"/>
   <course courseName="Grunnleggende visuell databehandling"
       courseCode="TDT4195"
       credits="7.5"
-      course="//@programme.0/@specializations.0/@year.0/@semesters.0/@courses.2"/>
+      course="//@programme.0/@specializations.0/@year.0/@semesters.0/@courses.2 //@programme.0/@specializations.1/@year.0/@semesters.0/@courses.2"/>
   <course courseName="Numerisk matematikk"
       courseCode="TMA4215"
       credits="7.5"
@@ -253,7 +327,7 @@
   <course courseName="Teknologiledelse"
       courseCode="TIØ4258"
       credits="7.5"
-      course="//@programme.0/@specializations.0/@year.0/@semesters.1/@courses.0"/>
+      course="//@programme.0/@specializations.0/@year.0/@semesters.1/@courses.0 //@programme.0/@specializations.1/@year.0/@semesters.1/@courses.0"/>
   <course courseName="Menneskemaskin-interaksjon"
       courseCode="TDT4180"
       credits="7.5"
@@ -261,7 +335,7 @@
   <course courseName="Programvarearkitektur"
       courseCode="TDT4240"
       credits="7.5"
-      course="//@programme.0/@specializations.0/@year.0/@semesters.1/@courses.2 //@programme.0/@specializations.0/@year.1/@semesters.0/@courses.1"/>
+      course="//@programme.0/@specializations.0/@year.0/@semesters.1/@courses.2 //@programme.0/@specializations.0/@year.1/@semesters.0/@courses.1 //@programme.0/@specializations.1/@year.0/@semesters.1/@courses.2"/>
   <course courseName="Materialteknikk"
       courseCode="TMM4100"
       credits="7.5"
@@ -273,11 +347,11 @@
   <course courseName="Marin datalab"
       courseCode="TMR4345"
       credits="7.5"
-      course="//@programme.0/@specializations.0/@year.1/@semesters.1/@courses.0"/>
+      course="//@programme.0/@specializations.0/@year.1/@semesters.1/@courses.0 //@programme.0/@specializations.1/@year.1/@semesters.1/@courses.1"/>
   <course courseName="Big Data-arkitektur"
       courseCode="TDT4305"
       credits="7.5"
-      course="//@programme.0/@specializations.0/@year.1/@semesters.1/@courses.1"/>
+      course="//@programme.0/@specializations.0/@year.1/@semesters.1/@courses.1 //@programme.0/@specializations.1/@year.0/@semesters.1/@courses.3 //@programme.0/@specializations.1/@year.1/@semesters.1/@courses.0"/>
   <course courseName="Plastkompositter"
       courseCode="TMM4175"
       credits="7.5"
@@ -285,11 +359,11 @@
   <course courseName="Datasyn og dyp læring"
       courseCode="TDT4265"
       credits="7.5"
-      course="//@programme.0/@specializations.0/@year.1/@semesters.1/@courses.3"/>
+      course="//@programme.0/@specializations.0/@year.1/@semesters.1/@courses.3 //@programme.0/@specializations.1/@year.1/@semesters.1/@courses.3"/>
   <course courseName="Anvendelse av elementmetoden "
       courseCode="TMM4155"
       credits="7.5"
-      course="//@programme.0/@specializations.0/@year.1/@semesters.1/@courses.4"/>
+      course="//@programme.0/@specializations.0/@year.1/@semesters.1/@courses.4 //@programme.0/@specializations.1/@year.1/@semesters.1/@courses.2"/>
   <course courseName="Industriell IKT produktutvikling"
       courseCode="TMM4540"
       credits="15.0"
@@ -314,4 +388,32 @@
       courseCode="TMM4960"
       credits="30.0"
       course="//@programme.0/@specializations.0/@year.2/@semesters.1/@courses.1"/>
+  <course courseName="ERP og PLM systemer"
+      courseCode="TPK4165"
+      credits="7.5"
+      course="//@programme.0/@specializations.1/@year.0/@semesters.0/@courses.3"/>
+  <course courseName="Produksjonslogistikk"
+      courseCode="TPK4135"
+      credits="7.5"
+      course="//@programme.0/@specializations.1/@year.0/@semesters.1/@courses.1"/>
+  <course courseName="Verdikjedestyring"
+      courseCode="TPK4160"
+      credits="7.5"
+      course="//@programme.0/@specializations.1/@year.1/@semesters.0/@courses.0"/>
+  <course courseName="Produksjonsledelse og logistikk"
+      courseCode="TPK4430"
+      credits="7.5"
+      course="//@programme.0/@specializations.1/@year.2/@semesters.0/@courses.0"/>
+  <course courseName="Produksjonsledelse, fordypning"
+      courseCode="TPK4530"
+      credits="15.0"
+      course="//@programme.0/@specializations.1/@year.2/@semesters.0/@courses.1"/>
+  <course courseName="Produksjonsledelse, masteroppgave"
+      courseCode="TPK4930"
+      credits="30.0"
+      course="//@programme.0/@specializations.1/@year.2/@semesters.1/@courses.0"/>
+  <course courseName="Avansert programvaredesign"
+      courseCode="TDT4250"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.1/@semesters.0/@courses.4 //@programme.0/@specializations.1/@year.1/@semesters.0/@courses.1"/>
 </eMF:Institute>
