@@ -30,13 +30,13 @@ h1 {
 
 .programme {
     display: flex;
-    font-size: 1.5em;
+    font-size: 1.6em;
 }
 
 .specialization {
     margin: 10px 0px 0px;
     display: flex;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 .year {
@@ -86,4 +86,10 @@ h1 {
 
 .status {
     width: 10%;
+}
+
+.border {
+    border-bottom: solid;
+    border-color: #888;
+    border-radius: 5px;
 }
