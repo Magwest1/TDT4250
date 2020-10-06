@@ -154,6 +154,18 @@
       </year>
     </specializations>
   </programme>
+  <programme
+      name="ExampleProgram"
+      numberOfYears="1">
+    <specializations
+        name="ExampleSpecialization">
+      <year
+          yearNumber="1">
+        <semesters
+            semesterNumber="1"/>
+      </year>
+    </specializations>
+  </programme>
   <course courseName="Matematikk 1"
       courseCode="TMA4100"
       credits="7.5"
