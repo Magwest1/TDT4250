@@ -83,6 +83,7 @@ public class Generator {
       this.generateOutput(it, stringbuilder);
     };
     pro.getSpecializations().forEach(_function_1);
+    this.operator_doubleLessThan(stringbuilder, "<div class=\'border\'></div>\n<br>\n<br>\n");
   }
   
   protected void _generateOutput(final Specialization spec, final StringBuilder stringbuilder) {
@@ -90,10 +91,14 @@ public class Generator {
     String _name = spec.getName();
     StringBuilder _doubleLessThan_1 = this.operator_doubleLessThan(_doubleLessThan, _name);
     this.operator_doubleLessThan(_doubleLessThan_1, "</div>\n");
-    final Consumer<Year> _function = (Year it) -> {
+    final Consumer<Specialization> _function = (Specialization it) -> {
       this.generateOutput(it, stringbuilder);
     };
-    spec.getYear().forEach(_function);
+    spec.getRequiredSpecialization().forEach(_function);
+    final Consumer<Year> _function_1 = (Year it) -> {
+      this.generateOutput(it, stringbuilder);
+    };
+    spec.getYear().forEach(_function_1);
   }
   
   protected void _generateOutput(final Year yr, final StringBuilder stringbuilder) {

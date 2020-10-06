@@ -31,9 +31,7 @@ public class GeneratorMain {
 	public static Institute getInstitute() throws IOException {
 		
 		ResourceSet rs = new ResourceSetImpl();
-		// relate the RaPackage identifier used in XMI files to the RaPackage instance (EPackage meta-object) 
 		rs.getPackageRegistry().put(EMFPackage.eNS_URI, EMFPackage.eINSTANCE);
-		// relate the XMI parser to the 'xmi' file extension
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new EMFResourceFactoryImpl());
 
 		Resource resource = rs.getResource(URI.createURI(GeneratorMain.class.getResource("Institute.xmi").toString()), true);
