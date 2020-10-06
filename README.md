@@ -41,5 +41,5 @@ I have also generated tests which are located in the *EMF.tests* folder. A test 
 
 ### How to install Xtend
 1. Open eclipse and choose *Help* -> *Install New Software...*
-2. Paste following URL in the field: http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/
-3. Open *Xtext* and install *Xtend IDE* and Xtext Complete SDK*
+2. Paste the following URL in the field: http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/
+3. Open *Xtext* and install *Xtend IDE* and *Xtext Complete SDK*
