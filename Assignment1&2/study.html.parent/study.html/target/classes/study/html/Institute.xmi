@@ -41,6 +41,38 @@
             course="TMA4105"/>
       </semesters>
     </years>
+    <years yearNumber="2">
+      <semesters
+          semesterNumber="3">
+        <courses
+            mandatory="true"
+            course="TDT4120"/>
+        <courses
+            mandatory="true"
+            course="TMA4240"/>
+        <courses
+            mandatory="true"
+            course="TKT4122"/>
+        <courses
+            mandatory="true"
+            course="TMA4110"/>
+      </semesters>
+      <semesters
+          semesterNumber="4">
+        <courses
+            mandatory="true"
+            course="TDT4140"/>
+        <courses
+            mandatory="true"
+            course="TDT4145"/>
+        <courses
+            mandatory="true"
+            course="TEP4100"/>
+        <courses
+            mandatory="true"
+            course="TFY4106"/>
+      </semesters>
+    </years>
     <specializations
         name="Maskinteknikk">
       <year
@@ -48,15 +80,96 @@
         <semesters
             semesterNumber="5">
           <courses
-              course="TMA4100"/>
+              mandatory="true"
+              course="TMA4130"/>
+          <courses
+              course="TDT4165"/>
+          <courses
+              course="TDT4195"/>
+          <courses
+              course="TMA4215"/>
+          <courses
+              course="TMM4270"/>
         </semesters>
+        <semesters
+            semesterNumber="6">
+          <courses
+              mandatory="true"
+              course="TIØ4258"/>
+          <courses
+              course="TDT4180"/>
+          <courses
+              course="TDT4240"/>
+          <courses
+              course="TMM4100"/>
+        </semesters>
+      </year>
+      <year
+          yearNumber="4">
+        <semesters
+            semesterNumber="7">
+          <courses
+              course="TDT4165"/>
+          <courses
+              course="TDT4240"/>
+          <courses
+              course="TMM4270"/>
+          <courses
+              course="TMM4150"/>
+        </semesters>
+        <semesters
+            semesterNumber="8">
+          <courses
+              course="TMR4345"/>
+          <courses
+              course="TDT4305"/>
+          <courses
+              course="TMM4175"/>
+          <courses
+              course="TDT4265"/>
+          <courses
+              course="TMM4155"/>
+        </semesters>
+      </year>
+      <year
+          yearNumber="5">
+        <semesters
+            semesterNumber="9">
+          <courses
+              course="TMM4151"/>
+          <courses
+              course="TMM4250"/>
+          <courses
+              course="TMM4540"/>
+          <courses
+              course="TMM4560"/>
+        </semesters>
+        <semesters
+            semesterNumber="10">
+          <courses
+              course="TMM4935"/>
+          <courses
+              course="TMM4960"/>
+        </semesters>
+      </year>
+    </specializations>
+  </programme>
+  <programme
+      name="ExampleProgram"
+      numberOfYears="1">
+    <specializations
+        name="ExampleSpecialization">
+      <year
+          yearNumber="1">
+        <semesters
+            semesterNumber="1"/>
       </year>
     </specializations>
   </programme>
   <course courseName="Matematikk 1"
       courseCode="TMA4100"
       credits="7.5"
-      course="//@programme.0/@years.0/@semesters.0/@courses.0 //@programme.0/@specializations.0/@year.0/@semesters.0/@courses.0"/>
+      course="//@programme.0/@years.0/@semesters.0/@courses.0"/>
   <course courseName="Informasjonsteknologi"
       courseCode="TDT4105"
       credits="7.5"
@@ -85,4 +198,120 @@
       courseCode="TMA4105"
       credits="7.5"
       course="//@programme.0/@years.0/@semesters.1/@courses.3"/>
+  <course courseName="Algoritmer og datastrukturer"
+      courseCode="TDT4120"
+      credits="7.5"
+      course="//@programme.0/@years.1/@semesters.0/@courses.0"/>
+  <course courseName="Statistikk"
+      courseCode="TMA4240"
+      credits="7.5"
+      course="//@programme.0/@years.1/@semesters.0/@courses.1"/>
+  <course courseName="Mekanikk 2"
+      courseCode="TKT4122"
+      credits="7.5"
+      course="//@programme.0/@years.1/@semesters.0/@courses.2"/>
+  <course courseName="Matematikk 3"
+      courseCode="TMA4110"
+      credits="7.5"
+      course="//@programme.0/@years.1/@semesters.0/@courses.3"/>
+  <course courseName="Programvareutvikling"
+      courseCode="TDT4140"
+      credits="7.5"
+      course="//@programme.0/@years.1/@semesters.1/@courses.0"/>
+  <course courseName="Datamodellering og databasesystemer"
+      courseCode="TDT4145"
+      credits="7.5"
+      course="//@programme.0/@years.1/@semesters.1/@courses.1"/>
+  <course courseName="Fluidmekanikk"
+      courseCode="TEP4100"
+      credits="7.5"
+      course="//@programme.0/@years.1/@semesters.1/@courses.2"/>
+  <course courseName="Fysikk"
+      courseCode="TFY4106"
+      credits="7.5"
+      course="//@programme.0/@years.1/@semesters.1/@courses.3"/>
+  <course courseName="Matematikk 4N"
+      courseCode="TMA4130"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.0/@semesters.0/@courses.0"/>
+  <course courseName="Programmeringsspråk"
+      courseCode="TDT4165"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.0/@semesters.0/@courses.1 //@programme.0/@specializations.0/@year.1/@semesters.0/@courses.0"/>
+  <course courseName="Grunnleggende visuell databehandling"
+      courseCode="TDT4195"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.0/@semesters.0/@courses.2"/>
+  <course courseName="Numerisk matematikk"
+      courseCode="TMA4215"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.0/@semesters.0/@courses.3"/>
+  <course courseName="Automatisering i ingeniørarbeid"
+      courseCode="TMM4270"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.0/@semesters.0/@courses.4 //@programme.0/@specializations.0/@year.1/@semesters.0/@courses.2"/>
+  <course courseName="Teknologiledelse"
+      courseCode="TIØ4258"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.0/@semesters.1/@courses.0"/>
+  <course courseName="Menneskemaskin-interaksjon"
+      courseCode="TDT4180"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.0/@semesters.1/@courses.1"/>
+  <course courseName="Programvarearkitektur"
+      courseCode="TDT4240"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.0/@semesters.1/@courses.2 //@programme.0/@specializations.0/@year.1/@semesters.0/@courses.1"/>
+  <course courseName="Materialteknikk"
+      courseCode="TMM4100"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.0/@semesters.1/@courses.3"/>
+  <course courseName="Maskinkonstruksjon og mekatronikk"
+      courseCode="TMM4150"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.1/@semesters.0/@courses.3"/>
+  <course courseName="Marin datalab"
+      courseCode="TMR4345"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.1/@semesters.1/@courses.0"/>
+  <course courseName="Big Data-arkitektur"
+      courseCode="TDT4305"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.1/@semesters.1/@courses.1"/>
+  <course courseName="Plastkompositter"
+      courseCode="TMM4175"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.1/@semesters.1/@courses.2"/>
+  <course courseName="Datasyn og dyp læring"
+      courseCode="TDT4265"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.1/@semesters.1/@courses.3"/>
+  <course courseName="Anvendelse av elementmetoden "
+      courseCode="TMM4155"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.1/@semesters.1/@courses.4"/>
+  <course courseName="Industriell IKT produktutvikling"
+      courseCode="TMM4540"
+      credits="15.0"
+      course="//@programme.0/@specializations.0/@year.2/@semesters.0/@courses.2"/>
+  <course courseName="Produktutvikling og materialer"
+      courseCode="TMM4560"
+      credits="15.0"
+      course="//@programme.0/@specializations.0/@year.2/@semesters.0/@courses.3"/>
+  <course courseName="Avansert produktsimulering"
+      courseCode="TMM4250"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.2/@semesters.0/@courses.1"/>
+  <course courseName="Produkt- og materialtesting"
+      courseCode="TMM4151"
+      credits="7.5"
+      course="//@programme.0/@specializations.0/@year.2/@semesters.0/@courses.0"/>
+  <course courseName="Industriell IKT, masteroppgave"
+      courseCode="TMM4935"
+      credits="30.0"
+      course="//@programme.0/@specializations.0/@year.2/@semesters.1/@courses.0"/>
+  <course courseName="Produktutvikling og materialer, masteroppgave"
+      courseCode="TMM4960"
+      credits="30.0"
+      course="//@programme.0/@specializations.0/@year.2/@semesters.1/@courses.1"/>
 </eMF:Institute>
