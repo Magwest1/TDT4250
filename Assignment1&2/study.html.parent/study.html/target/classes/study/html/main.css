@@ -36,7 +36,7 @@ h1 {
 .specialization {
     margin: 10px 0px 0px;
     display: flex;
-    font-size: 1.3em;
+    font-size: 1.5em;
     border-bottom: dashed;
     border-color: #888;
     width: fit-content;
@@ -45,13 +45,13 @@ h1 {
 .specialization-secondary {
     margin: 10px 0px 0px;
     display: flex;
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
 .year {
     margin: 10px 0px 0px;
     display: flex;
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 .table {
