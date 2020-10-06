@@ -37,6 +37,9 @@ h1 {
     margin: 10px 0px 0px;
     display: flex;
     font-size: 1.3em;
+    border-bottom: dashed;
+    border-color: #888;
+    width: fit-content;
 }
 
 .year {
