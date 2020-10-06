@@ -43,14 +43,14 @@ class Generator {
 	def dispatch void generateOutput(Programme pro, StringBuilder stringbuilder) {
 		stringbuilder << "<div class='programme'>Programme: " << pro.name << "</div>\n"
 		pro.years.forEach[generateOutput(it, stringbuilder)]
-		pro.specializations.forEach[generateOutput(it, stringbuilder)]
+		pro.specializations.forEach[generateOutput(it, false, stringbuilder)]
 		stringbuilder << "<div class='border'></div>\n<br>\n<br>\n"
 	}
 	
-	def dispatch void generateOutput(Specialization spec, StringBuilder stringbuilder) {
-		stringbuilder << "<div class='specialization'>Specialization: " << spec.name << "</div>\n"
-		spec.requiredSpecialization.forEach[generateOutput(it, stringbuilder)]
+	def void generateOutput(Specialization spec, Boolean secondary, StringBuilder stringbuilder) {
+		stringbuilder << "<div class='specialization" << (secondary ? "-secondary'" : "'") << ">Specialization: " << spec.name << "</div>\n"
 		spec.year.forEach[generateOutput(it, stringbuilder)]
+		spec.requiredSpecialization.forEach[generateOutput(it, true, stringbuilder)]
 	}
 	
 	def dispatch void generateOutput(Year yr, StringBuilder stringbuilder) {

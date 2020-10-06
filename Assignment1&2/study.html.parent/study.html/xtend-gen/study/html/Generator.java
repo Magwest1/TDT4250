@@ -80,25 +80,33 @@ public class Generator {
     };
     pro.getYears().forEach(_function);
     final Consumer<Specialization> _function_1 = (Specialization it) -> {
-      this.generateOutput(it, stringbuilder);
+      this.generateOutput(it, Boolean.valueOf(false), stringbuilder);
     };
     pro.getSpecializations().forEach(_function_1);
     this.operator_doubleLessThan(stringbuilder, "<div class=\'border\'></div>\n<br>\n<br>\n");
   }
   
-  protected void _generateOutput(final Specialization spec, final StringBuilder stringbuilder) {
-    StringBuilder _doubleLessThan = this.operator_doubleLessThan(stringbuilder, "<div class=\'specialization\'>Specialization: ");
+  public void generateOutput(final Specialization spec, final Boolean secondary, final StringBuilder stringbuilder) {
+    StringBuilder _doubleLessThan = this.operator_doubleLessThan(stringbuilder, "<div class=\'specialization");
+    String _xifexpression = null;
+    if ((secondary).booleanValue()) {
+      _xifexpression = "-secondary\'";
+    } else {
+      _xifexpression = "\'";
+    }
+    StringBuilder _doubleLessThan_1 = this.operator_doubleLessThan(_doubleLessThan, _xifexpression);
+    StringBuilder _doubleLessThan_2 = this.operator_doubleLessThan(_doubleLessThan_1, ">Specialization: ");
     String _name = spec.getName();
-    StringBuilder _doubleLessThan_1 = this.operator_doubleLessThan(_doubleLessThan, _name);
-    this.operator_doubleLessThan(_doubleLessThan_1, "</div>\n");
-    final Consumer<Specialization> _function = (Specialization it) -> {
+    StringBuilder _doubleLessThan_3 = this.operator_doubleLessThan(_doubleLessThan_2, _name);
+    this.operator_doubleLessThan(_doubleLessThan_3, "</div>\n");
+    final Consumer<Year> _function = (Year it) -> {
       this.generateOutput(it, stringbuilder);
     };
-    spec.getRequiredSpecialization().forEach(_function);
-    final Consumer<Year> _function_1 = (Year it) -> {
-      this.generateOutput(it, stringbuilder);
+    spec.getYear().forEach(_function);
+    final Consumer<Specialization> _function_1 = (Specialization it) -> {
+      this.generateOutput(it, Boolean.valueOf(true), stringbuilder);
     };
-    spec.getYear().forEach(_function_1);
+    spec.getRequiredSpecialization().forEach(_function_1);
   }
   
   protected void _generateOutput(final Year yr, final StringBuilder stringbuilder) {
@@ -183,9 +191,6 @@ public class Generator {
       return;
     } else if (ins instanceof Semester) {
       _generateOutput((Semester)ins, stringbuilder);
-      return;
-    } else if (ins instanceof Specialization) {
-      _generateOutput((Specialization)ins, stringbuilder);
       return;
     } else if (ins instanceof Year) {
       _generateOutput((Year)ins, stringbuilder);
