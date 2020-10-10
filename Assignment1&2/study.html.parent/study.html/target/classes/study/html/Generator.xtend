@@ -48,7 +48,7 @@ class Generator {
 	}
 	
 	def void generateOutput(Specialization spec, Boolean secondary, StringBuilder stringbuilder) { // Generate html from data in Specialization
-		//If the boolean is true we have a higher level specialization and want to use a differen header
+		//If the boolean is true we have a higher level specialization and want to use a different header
 		stringbuilder << "<div class='specialization" << (secondary ? "-secondary'" : "'") << ">Specialization: " << spec.name << "</div>\n"
 		spec.year.forEach[generateOutput(it, stringbuilder)]
 		spec.requiredSpecialization.forEach[generateOutput(it, true, stringbuilder)]
@@ -84,7 +84,7 @@ class Generator {
 	}
 	
 
-	// << operator
+	// << Operator
 	def StringBuilder operator_doubleLessThan(StringBuilder stringbuilder, Object o) {
 		return stringbuilder.append(o);
 	}
