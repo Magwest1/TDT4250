@@ -4,7 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:eMF="http://www.example.org/eMF"
-    xsi:schemaLocation="http://www.example.org/eMF ../../../../EMF/model/eMF.ecore"
+    xsi:schemaLocation="http://www.example.org/eMF ../../../../../EMF/model/eMF.ecore"
     Name="NTNU">
   <programme
       name="Ingeniørvitenskap og IKT"
@@ -236,11 +236,14 @@
       numberOfYears="1">
     <specializations
         name="ExampleSpecialization">
-      <year
-          yearNumber="1">
-        <semesters
-            semesterNumber="1"/>
-      </year>
+      <requiredSpecialization
+          name="ExampleSpecialization2">
+        <year
+            yearNumber="1">
+          <semesters
+              semesterNumber="1"/>
+        </year>
+      </requiredSpecialization>
     </specializations>
   </programme>
   <course courseName="Matematikk 1"

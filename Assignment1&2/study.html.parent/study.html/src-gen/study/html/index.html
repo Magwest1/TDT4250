@@ -145,6 +145,12 @@
 <div class='status'>O</div>
 </div>
 </div>
+<select class='default' id='selectIngeniørvitenskapogIKT' name='selectIngeniørvitenskapogIKT'>
+<option value='' selected>Select specialization...</option>
+<option value='Maskinteknikk'>Maskinteknikk</option>
+<option value='Produksjonsledelse'>Produksjonsledelse</option>
+</select>
+<div id='Maskinteknikk' style='display: none;'>
 <div class='specialization'>Specialization: Maskinteknikk</div>
 <div class='year'>3. Year. Showing 2 semesters:</div>
 <div class='table'>
@@ -353,6 +359,8 @@
 <div class='status'>VA</div>
 </div>
 </div>
+</div>
+<div id='Produksjonsledelse' style='display: none;'>
 <div class='specialization'>Specialization: Produksjonsledelse</div>
 <div class='year'>3. Year. Showing 2 semesters:</div>
 <div class='table'>
@@ -421,6 +429,11 @@
 <div class='status'>VA</div>
 </div>
 </div>
+<select class='default' id='selectProduksjonsledelse' name='selectProduksjonsledelse'>
+<option value='' selected>Select specialization...</option>
+<option value='Specializationinspecializationexample'>Specialization in specialization example</option>
+</select>
+<div id='Specializationinspecializationexample' style='display: none;'>
 <div class='specialization-secondary'>Specialization: Specialization in specialization example</div>
 <div class='year'>4. Year. Showing 2 semesters:</div>
 <div class='table'>
@@ -514,11 +527,24 @@
 <div class='status'>O</div>
 </div>
 </div>
+</div>
+</div>
 <div class='border'></div>
 <br>
 <br>
 <div class='programme'>Programme: ExampleProgram</div>
+<select class='default' id='selectExampleProgram' name='selectExampleProgram'>
+<option value='' selected>Select specialization...</option>
+<option value='ExampleSpecialization'>ExampleSpecialization</option>
+</select>
+<div id='ExampleSpecialization' style='display: none;'>
 <div class='specialization'>Specialization: ExampleSpecialization</div>
+<select class='default' id='selectExampleSpecialization' name='selectExampleSpecialization'>
+<option value='' selected>Select specialization...</option>
+<option value='ExampleSpecialization2'>ExampleSpecialization2</option>
+</select>
+<div id='ExampleSpecialization2' style='display: none;'>
+<div class='specialization-secondary'>Specialization: ExampleSpecialization2</div>
 <div class='year'>1. Year. Showing 1 semester:</div>
 <div class='table'>
 <div class='semester'>1. Semester</div>
@@ -529,9 +555,35 @@
 <div class='status'>Status</div>
 </div>
 </div>
+</div>
+</div>
 <div class='border'></div>
 <br>
 <br>
 </div>
 </body>
+<script>
+var elemIngeniørvitenskapogIKT = document.getElementById('selectIngeniørvitenskapogIKT');
+elemIngeniørvitenskapogIKT.onchange = function(){
+var hiddenDivMaskinteknikk = document.getElementById('Maskinteknikk');
+hiddenDivMaskinteknikk.style.display = (this.value == 'Maskinteknikk') ? 'block':'none';
+var hiddenDivProduksjonsledelse = document.getElementById('Produksjonsledelse');
+hiddenDivProduksjonsledelse.style.display = (this.value == 'Produksjonsledelse') ? 'block':'none';
+};
+var elemProduksjonsledelse = document.getElementById('selectProduksjonsledelse');
+elemProduksjonsledelse.onchange = function(){
+var hiddenDivSpecializationinspecializationexample = document.getElementById('Specializationinspecializationexample');
+hiddenDivSpecializationinspecializationexample.style.display = (this.value == 'Specializationinspecializationexample') ? 'block':'none';
+};
+var elemExampleProgram = document.getElementById('selectExampleProgram');
+elemExampleProgram.onchange = function(){
+var hiddenDivExampleSpecialization = document.getElementById('ExampleSpecialization');
+hiddenDivExampleSpecialization.style.display = (this.value == 'ExampleSpecialization') ? 'block':'none';
+};
+var elemExampleSpecialization = document.getElementById('selectExampleSpecialization');
+elemExampleSpecialization.onchange = function(){
+var hiddenDivExampleSpecialization2 = document.getElementById('ExampleSpecialization2');
+hiddenDivExampleSpecialization2.style.display = (this.value == 'ExampleSpecialization2') ? 'block':'none';
+};
+</script>
 </html>

@@ -50,8 +50,12 @@ public class Generator {
       StringConcatenation _builder_1 = new StringConcatenation();
       _builder_1.append("</body>");
       _builder_1.newLine();
-      _builder_1.append("</html>");
-      _xblockexpression = this.operator_doubleLessThan(stringbuilder, _builder_1);
+      this.operator_doubleLessThan(stringbuilder, _builder_1);
+      this.generateJavascript(ins, stringbuilder);
+      StringConcatenation _builder_2 = new StringConcatenation();
+      _builder_2.append("</html>");
+      _builder_2.newLine();
+      _xblockexpression = this.operator_doubleLessThan(stringbuilder, _builder_2);
     }
     return _xblockexpression;
   }
@@ -79,34 +83,91 @@ public class Generator {
       this.generateOutput(it, stringbuilder);
     };
     pro.getYears().forEach(_function);
-    final Consumer<Specialization> _function_1 = (Specialization it) -> {
-      this.generateOutput(it, Boolean.valueOf(false), stringbuilder);
-    };
-    pro.getSpecializations().forEach(_function_1);
+    int _size = pro.getSpecializations().size();
+    boolean _notEquals = (_size != 0);
+    if (_notEquals) {
+      this.generateSelect(pro, stringbuilder);
+      final Consumer<Specialization> _function_1 = (Specialization it) -> {
+        this.generateOutput(it, Boolean.valueOf(false), stringbuilder);
+      };
+      pro.getSpecializations().forEach(_function_1);
+    }
     this.operator_doubleLessThan(stringbuilder, "<div class=\'border\'></div>\n<br>\n<br>\n");
   }
   
   public void generateOutput(final Specialization spec, final Boolean secondary, final StringBuilder stringbuilder) {
-    StringBuilder _doubleLessThan = this.operator_doubleLessThan(stringbuilder, "<div class=\'specialization");
+    StringBuilder _doubleLessThan = this.operator_doubleLessThan(stringbuilder, "<div id=\'");
+    String _replaceAll = spec.getName().replaceAll("\\s", "");
+    StringBuilder _doubleLessThan_1 = this.operator_doubleLessThan(_doubleLessThan, _replaceAll);
+    this.operator_doubleLessThan(_doubleLessThan_1, "\' style=\'display: none;\'>\n");
+    StringBuilder _doubleLessThan_2 = this.operator_doubleLessThan(stringbuilder, "<div class=\'specialization");
     String _xifexpression = null;
     if ((secondary).booleanValue()) {
       _xifexpression = "-secondary\'";
     } else {
       _xifexpression = "\'";
     }
-    StringBuilder _doubleLessThan_1 = this.operator_doubleLessThan(_doubleLessThan, _xifexpression);
-    StringBuilder _doubleLessThan_2 = this.operator_doubleLessThan(_doubleLessThan_1, ">Specialization: ");
+    StringBuilder _doubleLessThan_3 = this.operator_doubleLessThan(_doubleLessThan_2, _xifexpression);
+    StringBuilder _doubleLessThan_4 = this.operator_doubleLessThan(_doubleLessThan_3, ">Specialization: ");
     String _name = spec.getName();
-    StringBuilder _doubleLessThan_3 = this.operator_doubleLessThan(_doubleLessThan_2, _name);
-    this.operator_doubleLessThan(_doubleLessThan_3, "</div>\n");
+    StringBuilder _doubleLessThan_5 = this.operator_doubleLessThan(_doubleLessThan_4, _name);
+    this.operator_doubleLessThan(_doubleLessThan_5, "</div>\n");
     final Consumer<Year> _function = (Year it) -> {
       this.generateOutput(it, stringbuilder);
     };
     spec.getYear().forEach(_function);
-    final Consumer<Specialization> _function_1 = (Specialization it) -> {
-      this.generateOutput(it, Boolean.valueOf(true), stringbuilder);
+    int _size = spec.getRequiredSpecialization().size();
+    boolean _notEquals = (_size != 0);
+    if (_notEquals) {
+      this.generateSelect(spec, stringbuilder);
+      final Consumer<Specialization> _function_1 = (Specialization it) -> {
+        this.generateOutput(it, Boolean.valueOf(true), stringbuilder);
+      };
+      spec.getRequiredSpecialization().forEach(_function_1);
+    }
+    this.operator_doubleLessThan(stringbuilder, "</div>\n");
+  }
+  
+  protected void _generateSelect(final Programme pro, final StringBuilder stringbuilder) {
+    StringBuilder _doubleLessThan = this.operator_doubleLessThan(stringbuilder, "<select class=\'default\' id=\'select");
+    String _replaceAll = pro.getName().replaceAll("\\s", "");
+    StringBuilder _doubleLessThan_1 = this.operator_doubleLessThan(_doubleLessThan, _replaceAll);
+    StringBuilder _doubleLessThan_2 = this.operator_doubleLessThan(_doubleLessThan_1, "\' name=\'select");
+    String _replaceAll_1 = pro.getName().replaceAll("\\s", "");
+    StringBuilder _doubleLessThan_3 = this.operator_doubleLessThan(_doubleLessThan_2, _replaceAll_1);
+    this.operator_doubleLessThan(_doubleLessThan_3, "\'>\n");
+    this.operator_doubleLessThan(stringbuilder, "<option value=\'\' selected>Select specialization...</option>\n");
+    final Consumer<Specialization> _function = (Specialization it) -> {
+      this.generateSelectOption(it, stringbuilder);
     };
-    spec.getRequiredSpecialization().forEach(_function_1);
+    pro.getSpecializations().forEach(_function);
+    this.operator_doubleLessThan(stringbuilder, "</select>\n");
+  }
+  
+  protected void _generateSelect(final Specialization spec, final StringBuilder stringbuilder) {
+    StringBuilder _doubleLessThan = this.operator_doubleLessThan(stringbuilder, "<select class=\'default\' id=\'select");
+    String _replaceAll = spec.getName().replaceAll("\\s", "");
+    StringBuilder _doubleLessThan_1 = this.operator_doubleLessThan(_doubleLessThan, _replaceAll);
+    StringBuilder _doubleLessThan_2 = this.operator_doubleLessThan(_doubleLessThan_1, "\' name=\'select");
+    String _replaceAll_1 = spec.getName().replaceAll("\\s", "");
+    StringBuilder _doubleLessThan_3 = this.operator_doubleLessThan(_doubleLessThan_2, _replaceAll_1);
+    this.operator_doubleLessThan(_doubleLessThan_3, "\'>\n");
+    this.operator_doubleLessThan(stringbuilder, "<option value=\'\' selected>Select specialization...</option>\n");
+    final Consumer<Specialization> _function = (Specialization it) -> {
+      this.generateSelectOption(it, stringbuilder);
+    };
+    spec.getRequiredSpecialization().forEach(_function);
+    this.operator_doubleLessThan(stringbuilder, "</select>\n");
+  }
+  
+  public void generateSelectOption(final Specialization spec, final StringBuilder stringbuilder) {
+    StringBuilder _doubleLessThan = this.operator_doubleLessThan(stringbuilder, "<option value=\'");
+    String _replaceAll = spec.getName().replaceAll("\\s", "");
+    StringBuilder _doubleLessThan_1 = this.operator_doubleLessThan(_doubleLessThan, _replaceAll);
+    StringBuilder _doubleLessThan_2 = this.operator_doubleLessThan(_doubleLessThan_1, "\'>");
+    String _name = spec.getName();
+    StringBuilder _doubleLessThan_3 = this.operator_doubleLessThan(_doubleLessThan_2, _name);
+    this.operator_doubleLessThan(_doubleLessThan_3, "</option>\n");
   }
   
   protected void _generateOutput(final Year yr, final StringBuilder stringbuilder) {
@@ -178,6 +239,84 @@ public class Generator {
     this.operator_doubleLessThan(stringbuilder, "</div>\n");
   }
   
+  protected void _generateJavascript(final Institute ins, final StringBuilder stringbuilder) {
+    this.operator_doubleLessThan(stringbuilder, "<script>\n");
+    final Consumer<Programme> _function = (Programme it) -> {
+      this.generateJavascript(it, stringbuilder);
+    };
+    ins.getProgramme().forEach(_function);
+    this.operator_doubleLessThan(stringbuilder, "</script>\n");
+  }
+  
+  protected void _generateJavascript(final Programme pro, final StringBuilder stringbuilder) {
+    StringBuilder _doubleLessThan = this.operator_doubleLessThan(stringbuilder, "var elem");
+    String _replaceAll = pro.getName().replaceAll("\\s", "");
+    StringBuilder _doubleLessThan_1 = this.operator_doubleLessThan(_doubleLessThan, _replaceAll);
+    StringBuilder _doubleLessThan_2 = this.operator_doubleLessThan(_doubleLessThan_1, " = document.getElementById(\'select");
+    String _replaceAll_1 = pro.getName().replaceAll("\\s", "");
+    StringBuilder _doubleLessThan_3 = this.operator_doubleLessThan(_doubleLessThan_2, _replaceAll_1);
+    this.operator_doubleLessThan(_doubleLessThan_3, "\');\n");
+    StringBuilder _doubleLessThan_4 = this.operator_doubleLessThan(stringbuilder, "elem");
+    String _replaceAll_2 = pro.getName().replaceAll("\\s", "");
+    StringBuilder _doubleLessThan_5 = this.operator_doubleLessThan(_doubleLessThan_4, _replaceAll_2);
+    this.operator_doubleLessThan(_doubleLessThan_5, ".onchange = function(){\n");
+    final Consumer<Specialization> _function = (Specialization it) -> {
+      this.generateJavascript(it, stringbuilder);
+    };
+    pro.getSpecializations().forEach(_function);
+    this.operator_doubleLessThan(stringbuilder, "};\n");
+    final Consumer<Specialization> _function_1 = (Specialization it) -> {
+      this.generateJavascriptRequiredSpec(it, stringbuilder);
+    };
+    pro.getSpecializations().forEach(_function_1);
+  }
+  
+  protected void _generateJavascript(final Specialization spec, final StringBuilder stringbuilder) {
+    StringBuilder _doubleLessThan = this.operator_doubleLessThan(stringbuilder, "var hiddenDiv");
+    String _replaceAll = spec.getName().replaceAll("\\s", "");
+    StringBuilder _doubleLessThan_1 = this.operator_doubleLessThan(_doubleLessThan, _replaceAll);
+    StringBuilder _doubleLessThan_2 = this.operator_doubleLessThan(_doubleLessThan_1, " = document.getElementById(\'");
+    String _replaceAll_1 = spec.getName().replaceAll("\\s", "");
+    StringBuilder _doubleLessThan_3 = this.operator_doubleLessThan(_doubleLessThan_2, _replaceAll_1);
+    this.operator_doubleLessThan(_doubleLessThan_3, "\');\n");
+    StringBuilder _doubleLessThan_4 = this.operator_doubleLessThan(stringbuilder, "hiddenDiv");
+    String _replaceAll_2 = spec.getName().replaceAll("\\s", "");
+    StringBuilder _doubleLessThan_5 = this.operator_doubleLessThan(_doubleLessThan_4, _replaceAll_2);
+    StringBuilder _doubleLessThan_6 = this.operator_doubleLessThan(_doubleLessThan_5, ".style.display = (this.value == \'");
+    String _replaceAll_3 = spec.getName().replaceAll("\\s", "");
+    StringBuilder _doubleLessThan_7 = this.operator_doubleLessThan(_doubleLessThan_6, _replaceAll_3);
+    this.operator_doubleLessThan(_doubleLessThan_7, "\') ? \'block\':\'none\';\n");
+  }
+  
+  public void generateJavascriptRequiredSpec(final Specialization spec, final StringBuilder stringbuilder) {
+    int _size = spec.getRequiredSpecialization().size();
+    boolean _notEquals = (_size != 0);
+    if (_notEquals) {
+      StringBuilder _doubleLessThan = this.operator_doubleLessThan(stringbuilder, "var elem");
+      String _replaceAll = spec.getName().replaceAll("\\s", "");
+      StringBuilder _doubleLessThan_1 = this.operator_doubleLessThan(_doubleLessThan, _replaceAll);
+      StringBuilder _doubleLessThan_2 = this.operator_doubleLessThan(_doubleLessThan_1, " = document.getElementById(\'select");
+      String _replaceAll_1 = spec.getName().replaceAll("\\s", "");
+      StringBuilder _doubleLessThan_3 = this.operator_doubleLessThan(_doubleLessThan_2, _replaceAll_1);
+      this.operator_doubleLessThan(_doubleLessThan_3, "\');\n");
+      StringBuilder _doubleLessThan_4 = this.operator_doubleLessThan(stringbuilder, "elem");
+      String _replaceAll_2 = spec.getName().replaceAll("\\s", "");
+      StringBuilder _doubleLessThan_5 = this.operator_doubleLessThan(_doubleLessThan_4, _replaceAll_2);
+      this.operator_doubleLessThan(_doubleLessThan_5, ".onchange = function(){\n");
+      final Consumer<Specialization> _function = (Specialization it) -> {
+        this.generateJavascript(it, stringbuilder);
+      };
+      spec.getRequiredSpecialization().forEach(_function);
+      this.operator_doubleLessThan(stringbuilder, "};\n");
+      final Consumer<Specialization> _function_1 = (Specialization it) -> {
+        this.generateJavascriptRequiredSpec(it, stringbuilder);
+      };
+      spec.getRequiredSpecialization().forEach(_function_1);
+    } else {
+      return;
+    }
+  }
+  
   public StringBuilder operator_doubleLessThan(final StringBuilder stringbuilder, final Object o) {
     return stringbuilder.append(o);
   }
@@ -194,6 +333,35 @@ public class Generator {
       return;
     } else if (ins instanceof Year) {
       _generateOutput((Year)ins, stringbuilder);
+      return;
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(ins, stringbuilder).toString());
+    }
+  }
+  
+  public void generateSelect(final EObject pro, final StringBuilder stringbuilder) {
+    if (pro instanceof Programme) {
+      _generateSelect((Programme)pro, stringbuilder);
+      return;
+    } else if (pro instanceof Specialization) {
+      _generateSelect((Specialization)pro, stringbuilder);
+      return;
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(pro, stringbuilder).toString());
+    }
+  }
+  
+  public void generateJavascript(final EObject ins, final StringBuilder stringbuilder) {
+    if (ins instanceof Institute) {
+      _generateJavascript((Institute)ins, stringbuilder);
+      return;
+    } else if (ins instanceof Programme) {
+      _generateJavascript((Programme)ins, stringbuilder);
+      return;
+    } else if (ins instanceof Specialization) {
+      _generateJavascript((Specialization)ins, stringbuilder);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
